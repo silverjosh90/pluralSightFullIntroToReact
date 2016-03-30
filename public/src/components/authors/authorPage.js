@@ -1,5 +1,6 @@
 var AuthorApi = require('../../api/authorApi')
 var AuthorsList = require('./authorsList')
+var Link = require('react-router').Link
 
 
 
@@ -19,6 +20,7 @@ var AuthorPage = React.createClass({
       <div>
         <h1> Authors </h1>
         <AuthorsList authors={this.state.authors} />
+        <Link to="/manageauthor" className="btn btn-primary"> Edit Authors </Link>
       </div>
     )
   }

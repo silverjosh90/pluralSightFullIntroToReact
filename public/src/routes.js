@@ -7,6 +7,7 @@ var PageNotFound = require('./components/common/pagenotfound')
 var App = require('./components/app')
 var AuthorPage = require('./components/authors/authorPage')
 var AboutPage = require('./components/about/aboutpage')
+var ManageAuthors= require('./components/authors/manageAuthorPage')
 var HomePage = require('./components/homePage')
 
 
@@ -14,8 +15,9 @@ var routes = (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <Route path="authors" component={AuthorPage} />
-      <Route path="about" component={AboutPage} />
-      <Route path="home" component={HomePage} />
+      <Route path="manageauthor" component={ManageAuthors} />
+      <Route path="about" component={AboutPage}  />
+      <Route path="home" component={HomePage}/>
       <Redirect from="home-derp" to="home" />
       <Route path="*" component={PageNotFound} />
     </Route>

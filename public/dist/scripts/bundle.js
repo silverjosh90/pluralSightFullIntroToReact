@@ -48888,18 +48888,8 @@ module.exports = {
 
 },{}],219:[function(require,module,exports){
 var React= require('react')
-var derp = confirm('hello')
 var About = React.createClass({displayName: "About",
-  statics: {
-  onenter: function(home, derp, callback) {
-    if (!derp) {
-      transition.to('home');
-    }
-    else {
-      return callback
-    }
-  }
-},
+
   render: function() {
     return(
       React.createElement("div", null, 
@@ -48935,9 +48925,10 @@ var App = React.createClass({displayName: "App",
 
 module.exports = App;
 
-},{"./common/header":223,"jquery":21}],221:[function(require,module,exports){
+},{"./common/header":224,"jquery":21}],221:[function(require,module,exports){
 var AuthorApi = require('../../api/authorApi')
 var AuthorsList = require('./authorsList')
+var Link = require('react-router').Link
 
 
 
@@ -48956,7 +48947,8 @@ var AuthorPage = React.createClass({displayName: "AuthorPage",
     return (
       React.createElement("div", null, 
         React.createElement("h1", null, " Authors "), 
-        React.createElement(AuthorsList, {authors: this.state.authors})
+        React.createElement(AuthorsList, {authors: this.state.authors}), 
+        React.createElement(Link, {to: "/manageauthor", className: "btn btn-primary"}, " Edit Authors ")
       )
     )
   }
@@ -48964,7 +48956,7 @@ var AuthorPage = React.createClass({displayName: "AuthorPage",
 
 module.exports = AuthorPage
 
-},{"../../api/authorApi":217,"./authorsList":222}],222:[function(require,module,exports){
+},{"../../api/authorApi":217,"./authorsList":222,"react-router":52}],222:[function(require,module,exports){
 var AuthorsList = React.createClass({displayName: "AuthorsList",
   propTypes: {
     authors: React.PropTypes.array.isRequired
@@ -49000,6 +48992,18 @@ var AuthorsList = React.createClass({displayName: "AuthorsList",
 module.exports = AuthorsList
 
 },{}],223:[function(require,module,exports){
+
+var ManageAuthorPage = React.createClass({displayName: "ManageAuthorPage",
+  render: function() {
+    return (
+      React.createElement("div", null, " Holllla  ")
+    )
+  }
+})
+
+module.exports = ManageAuthorPage
+
+},{}],224:[function(require,module,exports){
 var Link = require('react-router').Link
 
 var Header = React.createClass({displayName: "Header",
@@ -49024,7 +49028,7 @@ var Header = React.createClass({displayName: "Header",
 
 module.exports = Header
 
-},{"react-router":52}],224:[function(require,module,exports){
+},{"react-router":52}],225:[function(require,module,exports){
 var Link = require('react-router').Link
 
 var PageNotFound = React.createClass({displayName: "PageNotFound",
@@ -49040,7 +49044,7 @@ var PageNotFound = React.createClass({displayName: "PageNotFound",
 
 module.exports = PageNotFound
 
-},{"react-router":52}],225:[function(require,module,exports){
+},{"react-router":52}],226:[function(require,module,exports){
 var React = require('react')
 
 var Home= React.createClass({displayName: "Home",
@@ -49055,13 +49059,13 @@ var Home= React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":214}],226:[function(require,module,exports){
+},{"react":214}],227:[function(require,module,exports){
 var routes = require('./routes')
 
 
 ReactDOM.render(routes, document.getElementById('content'))
 
-},{"./routes":227}],227:[function(require,module,exports){
+},{"./routes":228}],228:[function(require,module,exports){
 var Router = require('react-router').Router
 var Redirect = require('react-router').Redirect;
 var Route = require('react-router').Route;
@@ -49071,6 +49075,7 @@ var PageNotFound = require('./components/common/pagenotfound')
 var App = require('./components/app')
 var AuthorPage = require('./components/authors/authorPage')
 var AboutPage = require('./components/about/aboutpage')
+var ManageAuthors= require('./components/authors/manageAuthorPage')
 var HomePage = require('./components/homePage')
 
 
@@ -49078,6 +49083,7 @@ var routes = (
   React.createElement(Router, {history: hashHistory}, 
     React.createElement(Route, {path: "/", component: App}, 
       React.createElement(Route, {path: "authors", component: AuthorPage}), 
+      React.createElement(Route, {path: "manageauthor", component: ManageAuthors}), 
       React.createElement(Route, {path: "about", component: AboutPage}), 
       React.createElement(Route, {path: "home", component: HomePage}), 
       React.createElement(Redirect, {from: "home-derp", to: "home"}), 
@@ -49088,4 +49094,4 @@ var routes = (
 
 module.exports = routes;
 
-},{"./components/about/aboutpage":219,"./components/app":220,"./components/authors/authorPage":221,"./components/common/header":223,"./components/common/pagenotfound":224,"./components/homePage":225,"react-router":52}]},{},[226]);
+},{"./components/about/aboutpage":219,"./components/app":220,"./components/authors/authorPage":221,"./components/authors/manageAuthorPage":223,"./components/common/header":224,"./components/common/pagenotfound":225,"./components/homePage":226,"react-router":52}]},{},[227]);

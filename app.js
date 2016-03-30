@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var React = require('react')
 var ReactDOM = require('react-dom')
+var Link = require('react-router').Link
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
