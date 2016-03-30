@@ -48888,7 +48888,18 @@ module.exports = {
 
 },{}],219:[function(require,module,exports){
 var React= require('react')
+var derp = confirm('hello')
 var About = React.createClass({displayName: "About",
+  statics: {
+  onenter: function(home, derp, callback) {
+    if (!derp) {
+      transition.to('home');
+    }
+    else {
+      return callback
+    }
+  }
+},
   render: function() {
     return(
       React.createElement("div", null, 
