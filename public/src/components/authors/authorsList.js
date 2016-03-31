@@ -1,3 +1,6 @@
+var Link = require('react-router').Link
+
+
 var AuthorsList = React.createClass({
   propTypes: {
     authors: React.PropTypes.array.isRequired
@@ -7,7 +10,7 @@ var AuthorsList = React.createClass({
     var createAuthorRow = function(author) {
       return (
         <tr key={author.id}>
-          <td><a href={"/#authors/" + author.id}>{author.id}</a></td>
+          <td><Link to={`/authors/${author.id}`}>{author.id}</Link></td>
           <td>{author.firstName} {author.lastName}</td>
         </tr>
       )

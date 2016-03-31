@@ -8,6 +8,7 @@ var reactify = require('reactify');
 var source = require('vinyl-source-stream')
 var concat = require('gulp-concat');
 var eslint = require('gulp-eslint');
+var toastr = require('toastr')
 
 
 
@@ -18,7 +19,8 @@ var config = {
     html: './src/*.html',
     js: './src/**/*.js',
     css: [
-      "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+      "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css",
+      toastr
     ],
     images: './src/images/*',
     dist: './dist',
