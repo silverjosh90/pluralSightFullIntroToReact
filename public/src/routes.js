@@ -24,6 +24,7 @@ var routes = (
       <Route path="*" component={PageNotFound} />
     </Route>
   </Router>
-)
+);
+    
 
 module.exports = routes;
