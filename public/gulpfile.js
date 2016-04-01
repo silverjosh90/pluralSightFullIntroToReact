@@ -19,8 +19,8 @@ var config = {
     html: './src/*.html',
     js: './src/**/*.js',
     css: [
-      "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css",
-      toastr
+      // "http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css",
+      // toastr
     ],
     images: './src/images/*',
     dist: './dist',
